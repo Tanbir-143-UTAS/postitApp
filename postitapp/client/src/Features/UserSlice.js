@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { UsersData } from "../Exampledata";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
+import * as ENV from "../config";
 //const initialState = { value: [] }; //list of user is an object with empty array as initial value
 const initialState = {
   value: UsersData,
@@ -19,7 +19,7 @@ export const registerUser = createAsyncThunk(
   async (userData) => {
     try {
       //sends a POST request to the server along the request body object;
-      const response = await axios.post("http://localhost:3001/registerUser", {
+      const response = await axios.post(`${ENV.SERVER_URL}/registerUser`, {
         name: userData.name,
         email: userData.email,
         password: userData.password,
@@ -35,7 +35,7 @@ export const registerUser = createAsyncThunk(
 
 export const login = createAsyncThunk("users/login", async (userData) => {
   try {
-    const response = await axios.post("http://localhost:3001/login", {
+    const response = await axios.post(`${ENV.SERVER_URL}/login`, {
       email: userData.email,
       password: userData.password,
     });
@@ -59,7 +59,7 @@ export const updateUserProfile = createAsyncThunk(
       // console.log(userData);
       // Send a PUT request to the server to update the user profile
       const response = await axios.put(
-        `http://localhost:3001/updateUserProfile/${userData.email}`, // API endpoint for updating user profile
+        `${ENV.SERVER_URL}/updateUserProfile/${userData.email}`, // API endpoint for updating user profile
         {
           // Request payload with user data to be updated
           email: userData.email,
@@ -169,6 +169,6 @@ export default userSlice.reducer;
 export const logout = createAsyncThunk("/users/logout", async () => {
   try {
     // Send a request to your server to log the user out
-    const response = await axios.post("http://localhost:3001/logout");
+    const response = await axios.post(`${ENV.SERVER_URL}/logout`);
   } catch (error) {}
 });
