@@ -25,7 +25,7 @@ const Posts = () => {
       userId: userId,
     };
     dispatch(likePost(postData));
-    navigate("/home");
+    navigate("/");
   };
 
   return (
