@@ -5,14 +5,15 @@ import Location from "./Location";
 const User = () => {
   const email = useSelector((state) => state.users.user.email);
   const name = useSelector((state) => state.users.user.name);
+    const user = useSelector((state) => state.users.user);
   const picURL = "http://localhost:3001/uploads/" + user.profilePic;
   return (
     <div>
       <img src={picURL} className="userImage" />
       <p>
-        {name}
+        {user.name}
         <br />
-        {email}
+        {user.email}
         <br />
         <Location />
       </p>
