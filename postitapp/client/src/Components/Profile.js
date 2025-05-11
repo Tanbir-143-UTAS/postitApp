@@ -86,7 +86,7 @@ const Profile = () => {
                 name="name"
                 placeholder="Name..."
                 type="text"
-  value={userName}
+                value={userName}
                 onChange={(e) => setUserName(e.target.value)}
               />
             </FormGroup>
@@ -97,7 +97,7 @@ const Profile = () => {
                 name="email"
                 placeholder="Email..."
                 type="email"
-                  value={email}
+                value={email}
               />
             </FormGroup>
             <FormGroup>
@@ -107,7 +107,7 @@ const Profile = () => {
                 name="password"
                 placeholder="Password..."
                 type="password"
-  value={pwd}
+                value={pwd}
   
                 onChange={(e) => setPwd(e.target.value)}
               />
@@ -119,7 +119,7 @@ const Profile = () => {
                 name="confirmPassword"
                 placeholder="Confirm Password..."
                 type="password"
-  value={confirmPassword}
+                value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </FormGroup>
