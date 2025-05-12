@@ -69,7 +69,11 @@ const Profile = () => {
       </p>
     </div>*/
 
+<<<<<<< HEAD
     <Container fluid>
+=======
+   <Container fluid>
+>>>>>>> 2d21ab8340bced415398d798a17fed51d6ae919b
       <Row>
         <Col md={3}>
           <User userData={user} />
@@ -108,6 +112,10 @@ const Profile = () => {
                 placeholder="Password..."
                 type="password"
                 value={pwd}
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 2d21ab8340bced415398d798a17fed51d6ae919b
                 onChange={(e) => setPwd(e.target.value)}
               />
             </FormGroup>

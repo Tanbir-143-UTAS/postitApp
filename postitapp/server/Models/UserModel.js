@@ -17,7 +17,11 @@ const UserSchema = mongoose.Schema({
 
   profilePic: {
     type: String,
+<<<<<<< HEAD
     default: "user.png",
+=======
+ 
+>>>>>>> 2d21ab8340bced415398d798a17fed51d6ae919b
   },
 });
 
