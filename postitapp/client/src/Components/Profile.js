@@ -46,7 +46,8 @@ const Profile = () => {
     alert("Profile Updated.");
     // Navigate back to the profile page after the update is completed
     navigate("/profile");
-
+  };
+  const handleFileChange = (event) => {
     const uploadFile = event.target.files[0];
     if (!uploadFile) alert("No file uploaded");
     else setProfilePic(event.target.files[0]);
@@ -69,22 +70,15 @@ const Profile = () => {
     </div>*/
 
     <Container fluid>
-      <h1>Profile</h1>
       <Row>
-        <Col md={2}>
-          <User />
+        <Col md={3}>
+          <User userData={user} />
         </Col>
-        <Col md={4}>Update Profile</Col>
 
         <Col md={4}>
-          Update Profile
           <Form onSubmit={handleUpdate}>
-            <input type="file" name="profilePic" />
-            <div
-              className="appTitle"
-              onChange={(e) => setProfilePic(e.target.value)}
-            ></div>
-            Update Profile
+            <input type="file" name="profilePic" onChange={handleFileChange} />
+
             <FormGroup>
               <Label for="name">Name</Label>
               <Input
@@ -92,6 +86,7 @@ const Profile = () => {
                 name="name"
                 placeholder="Name..."
                 type="text"
+                value={userName}
                 onChange={(e) => setUserName(e.target.value)}
               />
             </FormGroup>
@@ -102,6 +97,7 @@ const Profile = () => {
                 name="email"
                 placeholder="Email..."
                 type="email"
+                value={email}
               />
             </FormGroup>
             <FormGroup>
@@ -111,6 +107,7 @@ const Profile = () => {
                 name="password"
                 placeholder="Password..."
                 type="password"
+                value={pwd}
                 onChange={(e) => setPwd(e.target.value)}
               />
             </FormGroup>
@@ -121,6 +118,7 @@ const Profile = () => {
                 name="confirmPassword"
                 placeholder="Confirm Password..."
                 type="password"
+                value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </FormGroup>

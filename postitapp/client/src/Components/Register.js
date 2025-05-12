@@ -1,6 +1,6 @@
-import { Button, Col, Container, Row } from "reactstrap";
+import { Button, Col, Container, Row, Label, FormGroup } from "reactstrap";
 import { userSchemaValidation } from "../Validation/UserValidation";
-
+import logo from "../Images/logo-t.png";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -62,34 +62,47 @@ const Register = () => {
 
   return (
     <Container fluid>
-      <Row className="formrow">
-        <Col className="columndiv1" lg="6">
+      <Row>
+        <Col md={6} className="center">
+          <img src={logo} className="center" />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col md={6} className="center">
           <form className="div-form" onSubmit={handleSubmit(onSubmit)}>
             <section className="form">
               <div className="form-group">
-                <input
-                  type="text"
-                  id="name"
-                  className="form-control"
-                  placeholder="Enter your name..."
-                  {...register("name", {
-                    onChange: (e) => setname(e.target.value),
-                  })}
-                />
-                <p className="error">{errors.name?.message}</p>
+                <FormGroup>
+                  <Label for="name">Name</Label>
+
+                  <input
+                    type="text"
+                    id="name"
+                    className="form-control"
+                    placeholder="Enter your name..."
+                    {...register("name", {
+                      onChange: (e) => setname(e.target.value),
+                    })}
+                  />
+                  <p className="error">{errors.name?.message}</p>
+                </FormGroup>
               </div>
 
               <div className="form-group">
-                <input
-                  type="email"
-                  id="email"
-                  className="form-control"
-                  placeholder="Enter your email..."
-                  {...register("email", {
-                    onChange: (e) => setemail(e.target.value),
-                  })}
-                />
-                <p className="error">{errors.email?.message}</p>
+                <FormGroup>
+                  <Label for="name">Email</Label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="form-control"
+                    placeholder="Enter your email..."
+                    {...register("email", {
+                      onChange: (e) => setemail(e.target.value),
+                    })}
+                  />
+                  <p className="error">{errors.email?.message}</p>
+                </FormGroup>
               </div>
               {/*----------------------------------------------------------------------
               <div className="form-group">
@@ -128,29 +141,36 @@ const Register = () => {
               -----------------------------------------------------------------------------*/}
 
               <div className="form-group">
-                <input
-                  type="password"
-                  id="password"
-                  className="form-control"
-                  placeholder="Enter your password..."
-                  {...register("password", {
-                    onChange: (e) => setpassword(e.target.value),
-                  })}
-                />
-                <p className="error">{errors.password?.message}</p>
+                <FormGroup>
+                  <Label for="name">Password</Label>
+                  <input
+                    type="password"
+                    id="password"
+                    className="form-control"
+                    placeholder="Enter your password..."
+                    {...register("password", {
+                      onChange: (e) => setpassword(e.target.value),
+                    })}
+                  />
+                  <p className="error">{errors.password?.message}</p>
+                </FormGroup>
               </div>
 
               <div className="form-group">
-                <input
-                  type="password"
-                  id="confirmPassword"
-                  className="form-control"
-                  placeholder="Confirm your password..."
-                  {...register("confirmPassword", {
-                    onChange: (e) => setconfirmPassword(e.target.value),
-                  })}
-                />
-                <p className="error">{errors.confirmPassword?.message}</p>
+                <FormGroup>
+                  <Label for="name">Confirm Password</Label>
+
+                  <input
+                    type="password"
+                    id="confirmPassword"
+                    className="form-control"
+                    placeholder="Confirm your password..."
+                    {...register("confirmPassword", {
+                      onChange: (e) => setconfirmPassword(e.target.value),
+                    })}
+                  />
+                  <p className="error">{errors.confirmPassword?.message}</p>
+                </FormGroup>
               </div>
 
               <div className="form-group">

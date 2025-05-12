@@ -1,6 +1,6 @@
 import { Nav, Navbar, NavItem, NavLink } from "reactstrap";
 import logo from "../Images/logo-t.png";
-
+import { FaHome, FaUserAlt, FaSignOutAlt } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 import { useDispatch } from "react-redux";
@@ -27,7 +27,9 @@ const Header = () => {
           </NavItem>
 
           <NavItem>
-            <Link to="/">Home</Link>
+            <Link to="/">
+              <FaHome id="homeLink" />
+            </Link>
           </NavItem>
 
           <NavItem>
